@@ -126,7 +126,7 @@ class Bombero:public Autoridades{
 
     // Nuevas funciones específicas de la clase Policia
 	void apagar_fuego(){
-		cout<<"Los bomberos estan apagando el fuego en "<<get_lugar()<<endl;
+		cout<<"Los bomberos estan apagando el fuego"<<endl;
 	}   
 };
 
@@ -154,7 +154,7 @@ class Paramedico:public Autoridades{
     
     //Implementacion funcion especifica de paramedicos
     void atender_heridos(){
-    	cout<<"Los paramedicos estan atendiendo a los heridos en"<<get_lugar()<<endl;
+    	cout<<"Los paramedicos estan atendiendo a los heridos "<<endl;
 	}
 
 };
