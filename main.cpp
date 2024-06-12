@@ -10,7 +10,8 @@ void mostrar_menu() {
     cout << "1. Robo" << endl;
     cout << "2. Incendio" << endl;
     cout << "3. Herido" << endl;
-    cout << "4. Salir" << endl;
+    cout << "4. Buscar autoridades" << endl; // Nueva opción
+    cout << "5. Salir" << endl;
     cout << "Ingrese una opción: ";
 }
 
@@ -27,6 +28,9 @@ int main() {
     sistema.agregar_autoridades(policia);
     sistema.agregar_autoridades(bombero);
     sistema.agregar_autoridades(paramedico);
+
+    // Mostrar registros de autoridades
+    sistema.imprimir_autoridades();
 
     // Variables para la entrada del usuario
     string ubicacion, fecha, hora;
@@ -112,6 +116,10 @@ int main() {
                 break;
 
             case 4:
+                sistema.buscar_autoridades();
+                break;
+
+            case 5:
                 salir = true;
                 break;
 
