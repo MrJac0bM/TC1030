@@ -53,10 +53,13 @@ public:
         estatus = "En progreso";
     }
 
-    void agregar_autoridades(Autoridades* nueva_autoridad) {
-        if (n_autoridades < 100) {
+    void agregar_autoridad(Autoridades* nueva_autoridad) {
+    	int max_autoridades=100;
+        if (n_autoridades < max_autoridades) {
             autoridad[n_autoridades] = nueva_autoridad;
             n_autoridades++;
+        } else {
+            cout << "No se puede agregar más autoridades, límite alcanzado." << endl;
         }
     }
 
@@ -91,15 +94,12 @@ public:
         }
     }
     
-    void buscar_autoridades() {
-        int buscar;
-        cout << "Digite el número de autoridad a buscar: ";
-        cin >> buscar;
-        if (buscar > 0 && buscar <= n_autoridades) {
-            cout << "Descripción de la autoridad: " << autoridad[buscar - 1]->get_descripcion() << endl;
-            cout << "Lugar de la autoridad: " << autoridad[buscar - 1]->get_lugar() << endl;
+    void buscar_autoridad(int indice) {
+        if (indice >= 0 && indice < n_autoridades) {
+            cout << "Descripción de la autoridad: " << autoridad[indice]->get_descripcion() << endl;
+            cout << "Lugar de la autoridad: " << autoridad[indice]->get_lugar() << endl;
         } else {
-            cout << "Número de autoridad no válido." << endl;
+            cout << "Índice de autoridad no válido." << endl;
         }
     }
 };
