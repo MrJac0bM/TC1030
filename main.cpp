@@ -20,14 +20,19 @@ int main() {
     Policia* policia = new Policia(101, "Centro", "Patrulla en el centro de la ciudad", 1234);
     Bombero* bombero = new Bombero(201, "Barrio X", "Apagando incendio en el barrio", 3);
     Paramedico* paramedico = new Paramedico(301, "Hospital Z", "Atendiendo emergencia médica", 456);
+    Policia* policia2=new Policia(102,"Sur","Colonia Sur",2400);
+    Bombero* bombero2=new Bombero(201,"Centro","Bajando gato de un arbol",2044);
 
     // Crear instancia del sistema
     Sistema sistema;
 
     // Agregar las autoridades al sistema
-    sistema.agregar_autoridades(policia);
-    sistema.agregar_autoridades(bombero);
-    sistema.agregar_autoridades(paramedico);
+    sistema.agregar_autoridad(policia);
+    sistema.agregar_autoridad(bombero);
+    sistema.agregar_autoridad(paramedico);
+    sistema.agregar_autoridad(policia2);
+    sistema.agregar_autoridad(bombero2);
+    
 
     // Mostrar registros de autoridades
     sistema.imprimir_autoridades();
@@ -116,7 +121,10 @@ int main() {
                 break;
 
             case 4:
-                sistema.buscar_autoridades();
+                int buscar;
+                cout << "Digite el número de autoridad a buscar: ";
+                cin >> buscar;
+                sistema.buscar_autoridad(buscar - 1); // Ajustar el índice para que coincida con el arreglo
                 break;
 
             case 5:
@@ -135,4 +143,3 @@ int main() {
 
     return 0;
 }
-
